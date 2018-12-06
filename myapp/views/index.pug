@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+  h1.mt-5 Events
+    a.btn.btn-primary(href='./events/new' style='float:right') New
+  table.table
+    thead
+      tr
+        th(scope='col') Title
+        th(scope='col') Date
+    tbody
+      each event in events
+        tr
+          td
+            a(href='/events/' + event.id)= event.title
+          td= event.date

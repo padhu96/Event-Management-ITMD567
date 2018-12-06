@@ -1,0 +1,29 @@
+extends layout.pug
+
+block content
+  h1.mt-5= title
+  form(method="POST")
+    .form-group
+      label.h5.mt-4(for='title') Name your event
+      input#title.form-control(type='text', placeholder='e.g Beach Party', required='', name="title" value=event.title)
+      small#emailHelp.form-text.text-muted
+        | Create a cool fun name to attract people
+    .form-group
+      label.h5.mt-4(for='description') Event Description
+      textarea#desc.form-control(rows='5', required='', name="desc" placeholder ="Please include contact information here")= event.desc
+      small#eventDescSmall.form-text.text-muted
+        | Include special instructions and conditions, if any.
+    .form-group
+      label.h5.mt-4(for='date') Enter the date of your event
+      input#date.form-control(type='text', placeholder="e.g January 1, 2018", required='', name="date" value=event.date)
+    .form-group
+      label.h5.mt-4(for='age') For Age(s)?
+      input#age.form-control(type='text', placeholder='e.g 21 - 30', required='', name="age", value=event.age)
+    .form-group
+      label.h5.mt-4(for='from') From ?
+      input#from.form-control(type='text', placeholder='e.g 10 AM', required='', name="from" value=event.from)
+    .form-group
+      label.h5.mt-4(for='to') To?
+      input#to.form-control(type='text', placeholder='e.g 11 AM', required='', name="to" value=event.to)
+    button.btn.btn-primary(type='submit') Submit
+    a.btn.btn-danger(href="/" type='cancel' style="float:right") Cancel

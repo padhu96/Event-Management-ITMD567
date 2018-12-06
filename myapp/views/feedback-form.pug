@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+  h1.mt-5 Thank you for your feedback
+    label No press is bad press. Please feel free to tell us anything
+  form(method="POST" action="mailto:padminam@gmail.com" enctype="text/plain")
+    .form-group
+      label.h5.mt-4(for='title') Name of the event 
+      input#title.form-control(type='text', placeholder='e.g Beach Party', required='', name="title" )
+    .form-group
+      label.h5.mt-4(for='description') Your feedback
+      textarea#issue.form-control(rows='5', required='', name="issue" placeholder ="Please include necessary details")
+    button.btn.btn-primary(type='submit') Submit
+    a.btn.btn-danger(href="/" type='cancel' style="float:right") Cancel

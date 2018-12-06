@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+  h1.mt-5= event.title
+    a.btn.btn-primary(href='/events/' + event.id + '/update' style='float:right') Update
+    h4.mt-5="When?" 
+    p=event.date    
+    h4.mt-5="From "
+    p= event.from + " to " + event.to
+    h4.mt-5="Age Group" 
+    p=event.age
+    h4.mt-5="Info about the event" 
+    p=event.desc
+    br
+    form(action='/events/' + event.id + '/delete' method="POST")
+      button.btn.btn-danger(type='submit') Delete
