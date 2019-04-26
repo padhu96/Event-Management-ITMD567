@@ -13,7 +13,7 @@ app.set("port", process.env.PORT || 3001);
 //By default the port is 27017
 var mongoose = require("mongoose");
 mongoose.connect(
-  "mongodb://padhu:abc123@ds227853.mlab.com:27853/heroku_5tx0h8w6"
+  "mongodb://CREDENTIALS"
 );
 
 //Following line is required as we will be using IDs to identify each record i.e event
